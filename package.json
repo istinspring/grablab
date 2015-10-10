@@ -1,0 +1,15 @@
+{
+  "name": "grablab",
+  "version": "0.0.1",
+  "description": "website for grablab.org",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
+  }
+}
