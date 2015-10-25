@@ -1,0 +1,19 @@
+{
+    "name": "grablab",
+    "version": "0.5.0",
+    "authors": [
+        "istinspring <istinspring@gmail.com>"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "vendors",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "foundation": "~5.5.3"
+    }
+}

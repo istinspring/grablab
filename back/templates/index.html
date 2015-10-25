@@ -1,0 +1,68 @@
+{% extends '_layouts/_base.html' %}{% load staticfiles %}
+
+{% block partial_templates %}
+  {% for partial_name, partial_html in partials.items %}
+    <script id="{{ partial_name }}" type="text/ng-template">
+      {{ partial_html | safe }}
+    </script>
+  {% endfor %}
+{% endblock %}
+
+{% block navigation %}
+<nav class="navigation" ng-controller="NavigationCtrl">
+  <div class="row">
+    <div class="large-5 columns">
+      <div class="grablab-logo">
+        <img src="{% static 'art/grablablogo.png' %}" />
+      </div>
+    </div>
+    {% verbatim %}
+    <div class="large-7 columns">
+      <ul class="right button-group">
+        <li>
+          <a href="/" class="button" ng-class="{ active: isActive('/')}">
+            Главная
+          </a>
+        </li>
+        <li>
+          <a href="#" class="button">
+            Проекты
+          </a>
+        </li>
+        <li>
+          <a href="#" class="button">
+            Блог
+          </a>
+        </li>
+        <li>
+          <a href="/about" class="button" ng-class="{ active: isActive('/about')}">
+            О нас
+          </a>
+        </li>
+      </ul>
+    </div>
+    {% endverbatim %}
+  </div>
+</nav>
+{% endblock %}
+
+{% block footer %}
+<footer class="row">
+  <div class="large-12 columns">
+    <hr/>
+    <div class="row">
+      <div class="large-6 columns">
+        <p>© Copyright 2010-2014</p>
+      </div>
+      <div class="large-6 columns">
+        <ul class="inline-list right">
+          <li><a href="/">Главная</a></li>
+          <li><a href="#">Проекты</a></li>
+          <li><a href="#">Блог</a></li>
+          <li><a href="/about">О нас</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}

@@ -4,6 +4,9 @@
 # python
 *.pyc
 
+# django
+back/static/vendors
+
 # Logs
 logs
 *.log
