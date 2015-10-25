@@ -10,13 +10,22 @@ windows:
     start-directory: ./
     panes:
       - shell_command:
-          - clear
+        - workon webdev 
+        - clear
   - window_name: front
     panes:
       - shell_command:
-          - clear
+        - clear
   - window_name: back
     panes:
       - shell_command:
-          - workon webdev
-          - clear
+        - workon webdev
+        - clear
+  - window_name: db
+    panes:
+      - shell_command:
+        - pgql grablab
+  - window_name: run_postgres
+    panes:
+      - shell_command:
+        - postgres -D /usr/local/var/postgres
