@@ -1,1 +1,4 @@
 django
+honcho
+djangorestframework
+psycopg2

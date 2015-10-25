@@ -1,0 +1,1 @@
+back: cd back && python manage.py runserver
