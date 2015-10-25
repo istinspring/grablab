@@ -11,7 +11,12 @@ windows:
     panes:
       - shell_command:
           - clear
-  - window_name: srv
+  - window_name: front
     panes:
       - shell_command:
+          - clear
+  - window_name: back
+    panes:
+      - shell_command:
+          - workon webdev
           - clear

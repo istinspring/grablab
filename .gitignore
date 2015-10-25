@@ -1,3 +1,9 @@
+# environment
+.env
+
+# python
+*.pyc
+
 # Logs
 logs
 *.log
