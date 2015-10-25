@@ -20,7 +20,7 @@ if (env === 'build') {
 }
 
 var config = {
-  entry: './src/index.jsx',
+  entry: './front/index.jsx',
   devtool: 'source-map',
   output: {
     path: __dirname + '/lib',
