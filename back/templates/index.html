@@ -1,11 +1,111 @@
 {% extends '_layouts/_base.html' %}{% load staticfiles %}
 
-{% block partial_templates %}
-  {% for partial_name, partial_html in partials.items %}
-    <script id="{{ partial_name }}" type="text/ng-template">
-      {{ partial_html | safe }}
-    </script>
-  {% endfor %}
+{% block main %}
+<div class="row">
+  <div class="large-6 columns">
+    <div id="grablab-logo">
+      <img src="{% static 'arts/grablabracoon.gif' %}" width="460px" height="370px" />
+    </div>
+  </div>
+  <div class="large-6 columns">
+    <h1>Web Scraping</h1>
+    <h3>ПАРСИНГ ВЕБСАЙТОВ и API</h3>
+    <p>
+      Мы оказываем услуги в сфере сбора и обработки данных.
+      <ul>
+        <li>Парсинг веб-сайтов и извлечение нужных вам данных</li>
+        <li>Работа с API</li>
+        <li>Парсинг поисковых систем</li>
+        <li>Проектирование REST API бэкендов</li>
+      </ul>
+    </p>
+    <a href="#" class="button radius expand">Сделать заказ</a>
+    <!--a href="#" class="button radius expand success">Примерная стоимость</a-->
+  </div>
+  <hr/>
+</div>
+
+<div class="row">
+  <div class="large-6 columns">
+    <h4>Что такое веб-скрапинг?</h4>
+    <p>
+      <b>Веб-скрапинг</b> или <b>парсинг веб-сайтов</b> это технология извлечения данных с веб-сайтов и API. Как правило, процесс извлечения данных включает в себя разработку специальных программ - веб-спайдеров или ботов, которые могут использовать как низкоуровневые запросы через протокол http так и полную эмуляцию веб-браузера. В результате получается некий набор данных пригодный для дальнейшего использования.
+    </p>
+    {% verbatim %}
+    <a href="/faq" class="button expand">
+      Более подробно можно прочитать в F.A.Q.
+    </a>
+    {% endverbatim %}
+  </div>
+  <div class="large-6 columns">
+    <img src="{% static 'arts/codescreen.png' %}" />
+  </div>
+  <hr/>
+</div>
+
+<div class="row" data-equalizer>
+  <div class="large-4 columns">
+    <div class="panel" data-equalizer-watch>
+      <img src="http://placehold.it/400x300&text=[img]" class="th" />
+      <hr/>
+      <h4>This is a content section.</h4>
+      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+    </div>
+  </div>
+
+  <div class="large-4 columns">
+    <div class="panel" data-equalizer-watch>
+      <img src="http://placehold.it/400x300&text=[img]" class="th" />
+      <hr/>
+      <h4>This is a content section.</h4>
+      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+    </div>
+  </div>
+
+  <div class="large-4 columns">
+    <div class="panel" data-equalizer-watch>
+      <img src="http://placehold.it/400x300&text=[img]" class="th" />
+      <hr/>
+      <h4>This is a content section.</h4>
+      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+    </div>
+  </div>
+  <hr/>
+</div>
+
+<div class="row">
+  <div class="updates-box">
+
+    <div class="row>" data-equalizer>
+      <div class="large-6 columns">
+        <div class="panel radius" data-equalizer-watch>
+          <h3 class="feed-title">
+            Новые статьи в блоге <a href="{# url 'blog:article-feed' #}" title="RSS лента публикаций в блоге Grablab"><img src="{% static 'img/icons/feed-icon-small.png' %}" /></a>
+          </h3>
+          <hr/>
+          {% comment %}
+          {% for art in articles %}
+          <small>{{ art.date_published }}</small>
+          <h5><a href="{{ art.get_absolute_url }}">{{ art }}</a></h5>
+          {% endfor %}
+          {% endcomment %}
+        </div>
+        <a href="#" class="button expand">смотреть все статьи</a>
+      </div>
+      <div class="large-6 columns">
+        <div class="panel radius" data-equalizer-watch>
+          <h3 class="feed-title">Новые проекты GrabLab</h3>
+          <hr/>
+          {% for project in projects %}
+          <small>{{ project.created }}</small>
+          <h5><a href="#">{{ project.title }}</a></h5>
+          {% endfor %}
+        </div>
+        <a href="#" class="button expand">смотреть все проекты</a>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
 
 {% block navigation %}
@@ -13,7 +113,7 @@
   <div class="row">
     <div class="large-5 columns">
       <div class="grablab-logo">
-        <img src="{% static 'art/grablablogo.png' %}" />
+        <img src="{% static 'arts/grablablogo.png' %}" />
       </div>
     </div>
     {% verbatim %}

@@ -1,6 +1,6 @@
 <!DOCTYPE html>{% load staticfiles %}
 <!--[if IE 9]><html class="lt-ie10" lang="ru" ng-app="grablab"> <![endif]-->
-<html class="no-js" lang="ru" ng-app="grablab">
+<html class="no-js" lang="{{ page_lang }}" app="grablab">
 <head>
   <base href="/">
   <meta charset="utf-8">
@@ -11,10 +11,9 @@
 
   <link rel="stylesheet" href="{% static 'vendors/foundation/css/normalize.css' %}">
   <link rel="stylesheet" href="{% static 'vendors/foundation/css/foundation.css' %}">
-  <link rel="stylesheet" href="{% static 'vendors/angular-loading-bar/build/loading-bar.min.css' %}">
 
   <link rel="stylesheet" href="{% static 'css/grablab-theme.css' %}">
-  <link rel="stylesheet" href="{% static 'css/animations.css' %}">
+  <!--link rel="stylesheet" href="{% static 'css/animations.css' %}"-->
 
   <script src="{% static 'vendors/foundation/js/vendor/modernizr.js' %}"></script>
 </head>
@@ -23,23 +22,11 @@
 
   <div class="website-content">
     {% block navigation %}{% endblock %}
-    <div class="fadeZoom" ng-view autoscroll="true">
-      {% block partial_templates %}{% endblock %}
-    </div>
+    <main class="fadeZoom" autoscroll="true">
+      {% block main %}{% endblock %}
+    </main>
     {% block footer %}{% endblock %}
   </div>
-
-  <script src="{% static 'vendors/angular/angular.min.js' %}"></script>
-  <script src="{% static 'vendors/angular-route/angular-route.min.js' %}"></script>
-  <script src="{% static 'vendors/angular-resource/angular-resource.min.js' %}"></script>
-  <script src="{% static 'vendors/angular-animate/angular-animate.min.js' %}"></script>
-  <script src="{% static 'vendors/angular-foundation/mm-foundation-tpls.min.js' %}"></script>
-  <script src="{% static 'vendors/angular-loading-bar/build/loading-bar.min.js' %}"></script>
-  <script src="{% static 'app.js' %}"></script>
-  <script src="{% static 'controllers/navigationCtrl.js' %}"></script>
-  <script src="{% static 'controllers/homeCtrl.js' %}"></script>
-  <script src="{% static 'controllers/faqCtrl.js' %}"></script>
-  <script src="{% static 'controllers/aboutCtrl.js' %}"></script>
 
   {% include "_layouts/__features.html" %}
   {% include "_layouts/__counters.html" %}

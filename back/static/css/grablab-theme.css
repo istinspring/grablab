@@ -1,0 +1,22 @@
+
+body {
+    color: #333332;
+}
+
+.website-content {
+    background-color: #eee;
+    background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 72%,#f3f3f3 91%,#f6f6f6 100%);
+}
+
+.navigation {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.grablab-logo {
+    padding-top: 6px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
