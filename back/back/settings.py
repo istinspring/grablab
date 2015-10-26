@@ -101,22 +101,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
-    os.path.join(PROJECT_DIR, "node_modules/foundation")
 )
-STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'pipeline.finders.PipelineFinder',
-)
-
-# Static assets
-PIPELINE_CSS = {
-    'foundation': {
-        'source_filenames': (
-            'scss/normalize.scss',
-            'scss/foundation.scss',
-        ),
-        'output_filename': 'css/colors.css',
-    },
-}

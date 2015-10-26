@@ -1,10 +1,11 @@
-{% extends '_layouts/_base.html' %}{% load staticfiles %}
+{% extends '_layouts/_page.html' %}{% load staticfiles %}
 
 {% block main %}
 <div class="row">
   <div class="large-6 columns">
     <div id="grablab-logo">
-      <img src="{% static 'arts/grablabracoon.gif' %}" width="460px" height="370px" />
+      <img src="{% static 'arts/grablabracoon.gif' %}"
+           width="460px" height="370px" />
     </div>
   </div>
   <div class="large-6 columns">
@@ -20,7 +21,6 @@
       </ul>
     </p>
     <a href="#" class="button radius expand">Сделать заказ</a>
-    <!--a href="#" class="button radius expand success">Примерная стоимость</a-->
   </div>
   <hr/>
 </div>
@@ -29,7 +29,12 @@
   <div class="large-6 columns">
     <h4>Что такое веб-скрапинг?</h4>
     <p>
-      <b>Веб-скрапинг</b> или <b>парсинг веб-сайтов</b> это технология извлечения данных с веб-сайтов и API. Как правило, процесс извлечения данных включает в себя разработку специальных программ - веб-спайдеров или ботов, которые могут использовать как низкоуровневые запросы через протокол http так и полную эмуляцию веб-браузера. В результате получается некий набор данных пригодный для дальнейшего использования.
+      <b>Веб-скрапинг</b> или <b>парсинг веб-сайтов</b> это технология извлечения
+      данных с веб-сайтов и API. Как правило, процесс извлечения данных включает
+      в себя разработку специальных программ - веб-спайдеров или ботов, которые
+      могут использовать как низкоуровневые запросы через протокол http так и
+      полную эмуляцию веб-браузера. В результате получается некий набор данных
+      пригодный для дальнейшего использования.
     </p>
     {% verbatim %}
     <a href="/faq" class="button expand">
@@ -49,7 +54,12 @@
       <img src="http://placehold.it/400x300&text=[img]" class="th" />
       <hr/>
       <h4>This is a content section.</h4>
-      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+      <p>
+        Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod
+        commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non
+        est magna in labore pig pork biltong. Eiusmod swine spare ribs
+        reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.
+      </p>
     </div>
   </div>
 
@@ -58,7 +68,12 @@
       <img src="http://placehold.it/400x300&text=[img]" class="th" />
       <hr/>
       <h4>This is a content section.</h4>
-      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+      <p>
+        Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod
+        commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non
+        est magna in labore pig pork biltong. Eiusmod swine spare ribs
+        reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.
+      </p>
     </div>
   </div>
 
@@ -67,7 +82,12 @@
       <img src="http://placehold.it/400x300&text=[img]" class="th" />
       <hr/>
       <h4>This is a content section.</h4>
-      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+      <p>
+        Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod
+        commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non
+        est magna in labore pig pork biltong. Eiusmod swine spare ribs
+        reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.
+      </p>
     </div>
   </div>
   <hr/>
@@ -80,7 +100,11 @@
       <div class="large-6 columns">
         <div class="panel radius" data-equalizer-watch>
           <h3 class="feed-title">
-            Новые статьи в блоге <a href="{# url 'blog:article-feed' #}" title="RSS лента публикаций в блоге Grablab"><img src="{% static 'img/icons/feed-icon-small.png' %}" /></a>
+            Новые статьи в блоге
+            <a href="{# url 'blog:article-feed' #}"
+               title="RSS лента публикаций в блоге Grablab">
+              <img src="{% static 'img/icons/feed-icon-small.png' %}" />
+            </a>
           </h3>
           <hr/>
           {% comment %}
@@ -106,63 +130,4 @@
     </div>
   </div>
 </div>
-{% endblock %}
-
-{% block navigation %}
-<nav class="navigation" ng-controller="NavigationCtrl">
-  <div class="row">
-    <div class="large-5 columns">
-      <div class="grablab-logo">
-        <img src="{% static 'arts/grablablogo.png' %}" />
-      </div>
-    </div>
-    {% verbatim %}
-    <div class="large-7 columns">
-      <ul class="right button-group">
-        <li>
-          <a href="/" class="button" ng-class="{ active: isActive('/')}">
-            Главная
-          </a>
-        </li>
-        <li>
-          <a href="#" class="button">
-            Проекты
-          </a>
-        </li>
-        <li>
-          <a href="#" class="button">
-            Блог
-          </a>
-        </li>
-        <li>
-          <a href="/about" class="button" ng-class="{ active: isActive('/about')}">
-            О нас
-          </a>
-        </li>
-      </ul>
-    </div>
-    {% endverbatim %}
-  </div>
-</nav>
-{% endblock %}
-
-{% block footer %}
-<footer class="row">
-  <div class="large-12 columns">
-    <hr/>
-    <div class="row">
-      <div class="large-6 columns">
-        <p>© Copyright 2010-2014</p>
-      </div>
-      <div class="large-6 columns">
-        <ul class="inline-list right">
-          <li><a href="/">Главная</a></li>
-          <li><a href="#">Проекты</a></li>
-          <li><a href="#">Блог</a></li>
-          <li><a href="/about">О нас</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
 {% endblock %}
