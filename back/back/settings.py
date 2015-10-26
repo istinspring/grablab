@@ -14,7 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+PROJECT_DIR = os.path.dirname(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -105,6 +105,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
+    os.path.join(PROJECT_DIR, "node_modules/foundation")
 )
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 STATICFILES_FINDERS = (
@@ -113,3 +114,13 @@ STATICFILES_FINDERS = (
     'pipeline.finders.PipelineFinder',
 )
 
+# Static assets
+PIPELINE_CSS = {
+    'foundation': {
+        'source_filenames': (
+            'scss/normalize.scss',
+            'scss/foundation.scss',
+        ),
+        'output_filename': 'css/colors.css',
+    },
+}

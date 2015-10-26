@@ -20,4 +20,7 @@ insert_final_newline = true
 trim_trailing_whitespace = false
 
 [*.py]
-ident_size = 2
+indent_size = 4
+
+[*.js]
+indent_size = 2

@@ -2,20 +2,19 @@
   "name": "grablab",
   "version": "0.0.1",
   "description": "website for grablab.org",
-  "main": "src/index.js",
+  "main": "front/index.jsx",
   "scripts": {
-    "dev": "WEBPACK_ENV=dev ./node_modules/.bin/webpack --watch --inline",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "foundation": "^4.2.1",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-redux": "^3.1.0",
     "react-router": "^1.0.0-rc3",
     "redux": "^3.0.2",
-    "webpack": "^1.12.2",
     "yuglify": "^0.1.4"
   },
   "devDependencies": {
