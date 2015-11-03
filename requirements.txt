@@ -2,4 +2,3 @@ django
 honcho
 djangorestframework
 psycopg2
-pipeline
