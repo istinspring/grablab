@@ -22,4 +22,4 @@ class Project(TranslatableModel):
     updated = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
-        return self.safe_translation_getter('title', str(self.pk))
+        return self.safe_translation_getter('title', default='ru')
