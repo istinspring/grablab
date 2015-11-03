@@ -1,17 +1,21 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
+
+from hvad.models import TranslatableModel, TranslatedFields
 
 
-class Project(model.Models):
+class Project(TranslatableModel):
     """ Store data related to the project
     """
-    title = model.CharField(max_length=255)
-    slug = model.SlugField()
-
-    summary = model.CharField(max_length=255)
-    description = model.TextField()
+    translations = TranslatedFields(
+        title = models.CharField(max_length=255, unique=True),
+        summary = models.CharField(max_length=255),
+        description = models.TextField()
+    )
+    tags = ArrayField(models.CharField(max_length=30), blank=True)
 
     # TODO: add related customer and order
 
-    # standard fields
-    created = model.DateTimeField(auto_now_add=True)
-    updated = model.DateTimeField(auto_now=True)
+    # object creation time and object update time
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
