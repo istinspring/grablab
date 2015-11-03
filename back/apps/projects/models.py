@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
 
@@ -19,3 +20,6 @@ class Project(TranslatableModel):
     # object creation time and object update time
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+
+    def __unicode__(self):
+        return self.safe_translation_getter('title', str(self.pk))

@@ -1,3 +1,12 @@
 from django.contrib import admin
+from hvad.admin import TranslatableAdmin
 
-# Register your models here.
+from apps.projects.models import Project
+
+
+class ProjectAdmin(TranslatableAdmin):
+    # list_display = ['title', 'summary']
+    ordering = ['created']
+
+
+admin.site.register(Project, ProjectAdmin)
