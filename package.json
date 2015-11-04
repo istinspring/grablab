@@ -4,9 +4,13 @@
   "description": "website for grablab.org",
   "main": "front/index.jsx",
   "scripts": {
+    "lint": "eslint -c .eslintrc app",
+    "build": "NODE_ENV=production webpack --progress --profile --colors",
+    "watch": "NODE_PATH=./front webpack-dev-server --hot --inline --progress --colors --content-base back/static/build/",
+    "serve": "NODE_PATH=./front webpack-dev-server --hot --inline -colors --content-base back/static/build/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "istinspring",
   "license": "MIT",
   "dependencies": {
     "foundation": "^4.2.1",
@@ -15,6 +19,7 @@
     "react-redux": "^3.1.0",
     "react-router": "^1.0.0-rc3",
     "redux": "^3.0.2",
+    "webpack-bundle-tracker": "0.0.8",
     "yuglify": "^0.1.4"
   },
   "devDependencies": {
@@ -24,6 +29,8 @@
     "eslint": "^1.6.0",
     "eslint-loader": "^1.1.0",
     "eslint-plugin-react": "^3.5.1",
+    "html-webpack-plugin": "^1.6.2",
+    "jsx-loader": "^0.13.2",
     "redux-devtools": "^2.1.5",
     "webpack-dev-server": "^1.12.0"
   }

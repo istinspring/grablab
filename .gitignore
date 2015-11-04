@@ -10,6 +10,11 @@
 # django
 back/static/vendors
 
+# front-end assets
+lib/*.js
+lib/*.js.map
+webpack-stats.json
+
 # Logs
 logs
 *.log

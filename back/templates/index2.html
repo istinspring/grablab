@@ -1,0 +1,23 @@
+
+{% load render_bundle from webpack_loader %}
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="ru" ng-app="grablab"> <![endif]-->
+<html class="no-js" lang="{{ page_lang }}" app="grablab">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Парсинг сайтов | GrabLab.org</title>
+  <meta name="description" content="написание парсеров на заказ">
+  <meta name="keywords" content="веб-скрапинг, парсинг веб-сайтов">
+</head>
+
+<body>
+  <!--App-->
+  <div id="container"></div>
+  {% render_bundle 'main' %}
+  <!--/App-->
+  {% include "_layouts/__features.html" %}
+  {% include "_layouts/__counters.html" %}
+</body>
+</html>

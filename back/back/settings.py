@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.postgres',
     # 3rd party
+    'webpack_loader',
     'rest_framework',
     'hvad',
     # application
@@ -112,6 +113,14 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'build/',
+        'STATS_FILE': os.path.join(PROJECT_DIR, 'webpack-stats.json'),
+    }
+}
+
+print WEBPACK_LOADER
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,

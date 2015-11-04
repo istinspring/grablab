@@ -1,16 +1,18 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
-let Component = React.createClass({
-  render: function () {
-    return (
-      <p>Hello world</p>
-    );
-  },
+
+var HelloMessage = React.createClass({
+  render: function() {
+    return <div>Hello Grab!</div>;
+  }
 });
 
-window.onload = () => {
-  React.render(
-    <Component />,
-    document.querySelector('#container')
-  );
-};
+
+// function main () {
+//     return React.render(<HelloMessage />, document.getElementById('#container'));
+// }
+
+ReactDOM.render(<HelloMessage />, document.getElementById('container'));
+
+// module.export = main;

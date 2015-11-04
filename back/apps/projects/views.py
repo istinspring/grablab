@@ -13,6 +13,5 @@ class ProjectViewSet(viewsets.ModelViewSet):
     }
 
     def get_serializer_class(self):
-        print self.action
         cls = self.serializers.get(self.action, self.serializers['default'])
         return cls
