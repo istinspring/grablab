@@ -13,7 +13,10 @@ class Project(TranslatableModel):
         summary = models.CharField(max_length=255),
         description = models.TextField()
     )
-    tags = ArrayField(models.CharField(max_length=30), blank=True)
+    visible = models.BooleanField(blank=True, default=False)
+
+    # TODO: add tags in future
+    # tags = ArrayField(models.CharField(max_length=30), blank=True)
 
     # TODO: add related customer and order
 

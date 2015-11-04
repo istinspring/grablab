@@ -1,8 +1,18 @@
-from rest_framework import routers, serializers, viewsets
+from rest_framework import viewsets, serializers
 from .models import Project
-from .serializers import ProjectSerializer
+from .serializers import (
+    ProjectsListSerializer, ProjectDetailsSerializer)
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
-    queryset = Project.objects.all()
-    serializer_class = ProjectSerializer
+    queryset = Project.objects.filter(visible=True)
+    serializers = {
+        'default': ProjectDetailsSerializer,
+        'list': ProjectsListSerializer,
+        'retrieve': ProjectDetailsSerializer,
+    }
+
+    def get_serializer_class(self):
+        print self.action
+        cls = self.serializers.get(self.action, self.serializers['default'])
+        return cls
