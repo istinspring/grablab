@@ -1,5 +1,7 @@
 django
 honcho
-djangorestframework
 psycopg2
+# django apps
+djangorestframework
+django-rest-swagger
 django-webpack-loader

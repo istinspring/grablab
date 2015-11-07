@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     # 3rd party
     'webpack_loader',
     'rest_framework',
+    'rest_framework_swagger',
     'hvad',
     # application
     'apps.projects'

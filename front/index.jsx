@@ -1,21 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Link } from 'react-router'
+
 // site containers
-// import { App, Projects } from './containers';
 import App from './containers/app';
+import Home from './containers/home';
 import Projects from './containers/projects';
+import About from './containers/about';
+import Contacts from './containers/Contacts';
 
 
 // TODO: <Route path="*" component={NoMatch}/>
-console.log('Starting App...');
 ReactDOM.render((
   <Router>
-    <Route path="/" component={App} />
-    <Route path="/projects" component={Projects}/>
+    <Route component={App}>
+      <Route path="/" component={Home} />
+      <Route path="/projects" component={Projects} />
+      <Route path="/about" component={About} />
+      <Route path="/contacts" component={Contacts} />
+    </Route>
   </Router>
 ), document.getElementById('container'));
-// ReactDOM.render(
-//   <Header />, document.getElementById('container')
-// );
-console.log('App started!');

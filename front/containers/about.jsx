@@ -2,7 +2,7 @@
 import React from 'react';
 
 
-class Projects extends React.Component {
+class About extends React.Component {
   constructor(props) {
     super(props);
   };
@@ -10,10 +10,10 @@ class Projects extends React.Component {
   render() {
     return (
       <div>
-        <h1>Projects</h1>
+        <h1>About</h1>
       </div>
     );
   };
 }
 
-export default Projects;
+export default About;
