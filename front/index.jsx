@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link } from 'react-router'
+import { Router, Route, IndexRoute } from 'react-router'
 
 // site containers
 import App from './containers/app';
@@ -13,8 +13,8 @@ import Contacts from './containers/Contacts';
 // TODO: <Route path="*" component={NoMatch}/>
 ReactDOM.render((
   <Router>
-    <Route component={App}>
-      <Route path="/" component={Home} />
+    <Route path="/" component={App}>
+      <IndexRoute component={Home} />
       <Route path="/projects" component={Projects} />
       <Route path="/about" component={About} />
       <Route path="/contacts" component={Contacts} />
