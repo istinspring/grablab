@@ -1,14 +1,12 @@
 /* jshint esnext: true */
 import React from 'react';
+import fetch from 'isomorphic-fetch';
+
 import Header from './../components/header';
 import Footer from './../components/footer';
 
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  };
-
   render() {
     return (
       <div>

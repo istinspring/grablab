@@ -16,16 +16,37 @@ class ProjectsListItem extends React.Component {
 
 
 class ProjectsList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {projects: props.projects};
+  };
+
+  componentWillMount() {
+    // TODO: load initial data as 3-phase async fetch
+    // https://github.com/rackt/redux/issues/99#issuecomment-112212639
+    let self = this;
+    fetch('/api/projects/').then(function(res) {
+      return res.json();
+    }).then(function(json) {
+      self.setState({projects: json});
+    });
+  };
+
   render() {
-    let projects = PROJECTS_TEST_DATA;
+    if (!this.state.projects.length) {
+      return (<h3>Loading...</h3>);
+    };
     return (
       <ul>
-        {projects.map(function(item) {
+        {this.state.projects.map(function(item) {
           return <ProjectsListItem key={item.id} data={item} />;
         })}
       </ul>
     );
   };
 }
+
+ProjectsList.propTypes = { projects: React.PropTypes.array };
+ProjectsList.defaultProps = { projects: [] };
 
 export default ProjectsList;
