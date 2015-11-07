@@ -6,7 +6,6 @@ import PROJECTS_TEST_DATA from './../redux/projects';
 
 class ProjectsListItem extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <li>
         <b>{this.props.data.title}</b> - {this.props.data.summary}
