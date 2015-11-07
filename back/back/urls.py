@@ -25,10 +25,10 @@ router = routers.DefaultRouter()
 router.register(r'projects', ProjectViewSet)
 
 urlpatterns = [
-    url(r'^$', IndexPageView.as_view(), name='index-page'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include(router.urls)),
     url(r'^docs/', include('rest_framework_swagger.urls')),
     url(r'^api-auth/', include('rest_framework.urls',
-                               namespace='rest_framework'))
+                               namespace='rest_framework')),
+    url(r'^.*$', IndexPageView.as_view(), name='index-page'),
 ]
