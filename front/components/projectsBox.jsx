@@ -1,14 +1,17 @@
 /* jshint esnext: true */
 import React from 'react';
 import { Link } from 'react-router'
-import PROJECTS_TEST_DATA from './../redux/projects';
+import fetch from 'isomorphic-fetch';
 
 
 class ProjectsListItem extends React.Component {
   render() {
+    const linkTo = '/projects/' + this.props.data.id;
     return (
       <li>
-        <b>{this.props.data.title}</b> - {this.props.data.summary}
+        <Link to={linkTo}>
+          <b>{this.props.data.title}</b> - {this.props.data.summary}
+        </Link>
       </li>
     );
   };
@@ -21,7 +24,7 @@ class ProjectsList extends React.Component {
     this.state = {projects: props.projects};
   };
 
-  componentWillMount() {
+  componentDidMount() {
     // TODO: load initial data as 3-phase async fetch
     // https://github.com/rackt/redux/issues/99#issuecomment-112212639
     let self = this;
