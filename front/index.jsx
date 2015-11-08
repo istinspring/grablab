@@ -18,8 +18,10 @@ ReactDOM.render((
   <Router history={createBrowserHistory()}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
-      <Route path="/projects" component={ProjectsListPage} />
-      <Route path="/projects/:id" component={ProjectDetailsPage} />
+      <Route path="/projects">
+        <IndexRoute component={ProjectsListPage} />
+        <Route path="/projects/:id" component={ProjectDetailsPage} />
+      </Route>
       <Route path="/about" component={About} />
       <Route path="/contacts" component={Contacts} />
     </Route>
