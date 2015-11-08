@@ -9,7 +9,10 @@ import ProjectDetails from './../components/projectDetails';
 export class ProjectsListPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {projects: props.projects};
+    this.state = {
+      projects: props.projects,
+      lang: props.lang,
+    };
   };
 
   componentDidMount() {
@@ -27,19 +30,29 @@ export class ProjectsListPage extends React.Component {
     return (
       <div>
         <h1>Projects</h1>
-        <ProjectsList data={this.state.projects} />
+        <ProjectsList data={this.state.projects}
+                      lang={this.state.lang} />
       </div>
     );
   };
 }
-ProjectsListPage.propTypes = { projects: React.PropTypes.array };
-ProjectsListPage.defaultProps = { projects: [] };
+ProjectsListPage.propTypes = {
+  projects: React.PropTypes.array,
+  lang: React.PropTypes.string
+};
+ProjectsListPage.defaultProps = {
+  projects: [],
+  lang: 'ru'
+};
 
 
 export class ProjectDetailsPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {project: props.project};
+    this.state = {
+      project: props.project,
+      lang: props.lang
+    };
   }
 
   componentDidMount() {
@@ -58,5 +71,11 @@ export class ProjectDetailsPage extends React.Component {
     )
   }
 }
-ProjectDetailsPage.propTypes = { project: React.PropTypes.object };
-ProjectDetailsPage.defaultProps = { project: {} };
+ProjectDetailsPage.propTypes = {
+  project: React.PropTypes.object,
+  lang: React.PropTypes.string
+};
+ProjectDetailsPage.defaultProps = {
+  project: {},
+  lang: 'ru'
+};

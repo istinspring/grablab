@@ -6,11 +6,16 @@ import Footer from './../components/footer';
 
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {lang: props.params.lang};
+  }
+
   render() {
     return (
       <div>
         <h1>App</h1>
-        <Header />
+        <Header lang={this.state.lang} />
         <hr />
         {this.props.children}
         <hr />
@@ -19,5 +24,7 @@ class App extends React.Component {
     );
   };
 }
+App.propTypes = { lang: React.PropTypes.string };
+App.defaultProps = { lang: 'ru' };
 
 export default App;

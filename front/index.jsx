@@ -2,7 +2,7 @@ import 'babel-core/polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute } from 'react-router'
+import { Router, Route, IndexRoute, Redirect } from 'react-router'
 import createBrowserHistory from 'history/lib/createBrowserHistory'
 
 // site containers
@@ -16,14 +16,15 @@ import Contacts from './containers/Contacts';
 // TODO: <Route path="*" component={NoMatch}/>
 ReactDOM.render((
   <Router history={createBrowserHistory()}>
-    <Route path="/" component={App}>
+    <Redirect from="/" to="/ru" />
+    <Route path="/:lang" component={App}>
       <IndexRoute component={Home} />
-      <Route path="/projects">
+      <Route path="/:lang/projects">
         <IndexRoute component={ProjectsListPage} />
-        <Route path="/projects/:id" component={ProjectDetailsPage} />
+        <Route path="/:lang/projects/:id" component={ProjectDetailsPage} />
       </Route>
-      <Route path="/about" component={About} />
-      <Route path="/contacts" component={Contacts} />
+      <Route path="/:lang/about" component={About} />
+      <Route path="/:lang/contacts" component={Contacts} />
     </Route>
   </Router>
 ), document.getElementById('container'));

@@ -6,7 +6,9 @@ import fetch from 'isomorphic-fetch';
 
 class ProjectsListItem extends React.Component {
   render() {
-    const linkTo = '/projects/' + this.props.data.id;
+    const _id = this.props.data.id;
+    const lang = this.props.lang;
+    const linkTo = '/' + lang + '/projects/' + _id;
     return (
       <li>
         <Link to={linkTo}>
@@ -17,20 +19,19 @@ class ProjectsListItem extends React.Component {
   };
 }
 
-class ProjectsList extends React.Component {
+export default class ProjectsList extends React.Component {
   render() {
-    console.log(this.props);
-    if (!this.props.data.length) {
-      return (<h3>Loading...</h3>);
-    };
+    const lang = this.props.lang;
+    const projectsList = this.props.data;
     return (
       <ul>
-        {this.props.data.map(function(item) {
-          return <ProjectsListItem key={item.id} data={item} />;
+        {projectsList.map(
+          function(item) {
+            return <ProjectsListItem key={item.id}
+                                     data={item}
+                                     lang={lang} />
         })}
       </ul>
     );
   };
 }
-
-export default ProjectsList;

@@ -4,3 +4,11 @@
 
 + Email templates - https://www.muicss.com/docs/v1/email/boilerplate-html
 + What to pick material design, foundation or bootstrap?
+
+** Translation (Khan Academy suggestion)
+
++ http://babel.pocoo.org
++ http://www.localeplanet.com
++ http://slexaxton.github.io/Jed/
++ http://blog.arkency.com/2015/03/use-your-gettext-translations-in-your-react-components/
++ http://i18next.com

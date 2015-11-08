@@ -4,18 +4,15 @@ import { Link } from 'react-router'
 
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
-  };
-
   render() {
+    const lang = this.props.lang;
     return (
       <nav>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/projects">Projects</Link></li>
-          <li><Link to="/contacts">Contacts</Link></li>
-          <li><Link to="/about">About</Link></li>
+          <li><Link to={lang}>Home</Link></li>
+          <li><Link to={lang + '/projects'}>Projects</Link></li>
+          <li><Link to={lang + '/contacts'}>Contacts</Link></li>
+          <li><Link to={lang + '/about'}>About</Link></li>
         </ul>
       </nav>
     );
