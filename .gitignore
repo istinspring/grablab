@@ -16,6 +16,7 @@ back/static/vendors
 lib/*.js
 lib/*.js.map
 webpack-stats.json
+back/static/css/*.css
 
 # Logs
 logs

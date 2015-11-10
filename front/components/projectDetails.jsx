@@ -3,11 +3,14 @@ import React from 'react';
 import { Link } from 'react-router'
 import fetch from 'isomorphic-fetch';
 
+import ProgressBar from 'react-toolbox/lib/progress_bar';
+
 
 class ProjectDetails extends React.Component {
   render() {
     if (!this.props.data) {
-      return (<h3>Loading...</h3>);
+      return (
+        <ProgressBar type="circular" mode="indeterminate" />);
     };
     return (
       <div>
