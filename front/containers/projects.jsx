@@ -11,7 +11,7 @@ export class ProjectsListPage extends React.Component {
     super(props);
     this.state = {
       projects: props.projects,
-      lang: props.lang,
+      lang: props.lang
     };
   };
 
@@ -68,7 +68,7 @@ export class ProjectDetailsPage extends React.Component {
   render() {
     return (
       <ProjectDetails data={this.state.project} />
-    )
+    );
   }
 }
 ProjectDetailsPage.propTypes = {
