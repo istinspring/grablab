@@ -3,6 +3,9 @@ import React from 'react';
 import { Link } from 'react-router'
 import fetch from 'isomorphic-fetch';
 
+import { ListItem } from 'react-toolbox/lib/list';
+
+
 
 class ProjectsListItem extends React.Component {
   render() {
@@ -10,11 +13,13 @@ class ProjectsListItem extends React.Component {
     const lang = this.props.lang;
     const linkTo = '/' + lang + '/projects/' + _id;
     return (
-      <li>
-        <Link to={linkTo}>
-          <b>{this.props.data.title}</b> - {this.props.data.summary}
-        </Link>
-      </li>
+      <Link to={linkTo}>
+        <ListItem
+          avatar='https://dl.dropboxusercontent.com/u/2247264/assets/m.jpg'
+          caption={this.props.data.title}
+          legend={this.props.data.summary}
+        />
+      </Link>
     );
   };
 }
@@ -24,14 +29,14 @@ export default class ProjectsList extends React.Component {
     const lang = this.props.lang;
     const projectsList = this.props.data;
     return (
-      <ul>
+      <div>
         {projectsList.map(
           function(item) {
             return <ProjectsListItem key={item.id}
                                      data={item}
                                      lang={lang} />
         })}
-      </ul>
+      </div>
     );
   };
 }

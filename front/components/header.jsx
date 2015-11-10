@@ -1,8 +1,7 @@
 /* jshint esnext: true */
 import React from 'react';
-import { PropTypes } from 'react-router'
-import { Link } from 'react-router'
-
+import { PropTypes, Link } from 'react-router'
+import grid from 'flexboxgrid';
 import style from './style';
 import AppBar from 'react-toolbox/lib/app_bar';
 import Navigation from 'react-toolbox/lib/navigation';
@@ -28,7 +27,7 @@ class Header extends React.Component {
           onClick: function() {
             console.log('click projects');
             return self.context.history
-                  .pushState(null, lang + '/projects');
+                   .pushState(null, lang + '/projects');
           },
           label: 'Projects',
           kind: 'raised',
@@ -42,8 +41,9 @@ class Header extends React.Component {
 
   render() {
     return (
-      <AppBar className={style.appbar} flat>
-        <Navigation type='horizontal'
+      <AppBar className={style.appbar} flat fixed>
+        <a href="/" style={{float: 'right'}}>GrabLab</a>
+        <Navigation type='horizontal' style={{float: 'left'}}
                     actions={this.state.actions} />
       </AppBar>
     );

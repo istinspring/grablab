@@ -1,7 +1,10 @@
 /* jshint esnext: true */
 import React from 'react';
+import style from './styles'
+import grid from 'flexboxgrid';
 import fetch from 'isomorphic-fetch';
 
+import { List, ListSubHeader } from 'react-toolbox/lib/list';
 import ProjectsList from './../components/projectsBox';
 import ProjectDetails from './../components/projectDetails';
 
@@ -28,10 +31,14 @@ export class ProjectsListPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Projects</h1>
-        <ProjectsList data={this.state.projects}
-                      lang={this.state.lang} />
+      <div className={style.content}>
+        <div className={grid.row}>
+          <List selectable ripple>
+            <ListSubHeader caption='Проекты' />
+            <ProjectsList data={this.state.projects}
+                          lang={this.state.lang} />
+          </List>
+        </div>
       </div>
     );
   };

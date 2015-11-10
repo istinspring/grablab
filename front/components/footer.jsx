@@ -14,8 +14,8 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <footer>
-        <AppBar className={style.appbar} flat />
+      <footer className={style['footer-container']}>
+        <h1>Footer</h1>
       </footer>
     );
   };
