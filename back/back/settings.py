@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'rest_framework_swagger',
     'hvad',
+    'django_seo_js',
     # application
     'apps.projects'
 )
@@ -59,6 +60,12 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
+
+# prerender.io
+MIDDLEWARE_CLASSES += (
+    'django_seo_js.middleware.EscapedFragmentMiddleware',
+    'django_seo_js.middleware.UserAgentMiddleware', )
+SEO_JS_PRERENDER_TOKEN = os.environ['PRERENDER_TOKEN']
 
 ROOT_URLCONF = 'back.urls'
 
