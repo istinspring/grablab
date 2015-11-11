@@ -10,7 +10,8 @@ class ProjectDetails extends React.Component {
   render() {
     if (!this.props.data) {
       return (
-        <ProgressBar type="circular" mode="indeterminate" />);
+        <ProgressBar type="circular" mode="indeterminate" />
+      );
     };
     return (
       <div>

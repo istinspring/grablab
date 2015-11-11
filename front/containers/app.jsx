@@ -12,12 +12,13 @@ export default class App extends React.Component {
     super(props);
     this.state = {lang: props.params.lang};
   }
-  // <div className={style.content}>
   render() {
     return (
       <div>
         <Header lang={this.state.lang} />
-        {this.props.children}
+        <div className={style.spacer}>
+          {this.props.children}
+        </div>
         <Footer />
       </div>
     );

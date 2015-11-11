@@ -15,7 +15,7 @@ class Footer extends React.Component {
   render() {
     return (
       <footer className={style['footer-container']}>
-        <h1>Footer</h1>
+        <h2>Copyright 2008-2015 (c)</h2>
       </footer>
     );
   };

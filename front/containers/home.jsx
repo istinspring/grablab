@@ -21,17 +21,19 @@ class Home extends React.Component {
             <div className={grid.box}>
               <h1>Web Scraping</h1>
               <h3>ПАРСИНГ ВЕБСАЙТОВ и API</h3>
-              <p>
-                <small>Мы оказываем услуги в сфере сбора и обработки данных.</small>
+              <small>Мы оказываем услуги в сфере сбора и обработки данных.</small>
+              <div style={{'paddingTop': '10px'}}>
                 <ul>
                   <li>Парсинг веб-сайтов и извлечение нужных вам данных</li>
                   <li>Работа с API</li>
+                  <li>Нормализация данных</li>
                   <li>Парсинг поисковых систем</li>
                   <li>Фронтэнд для администрирования данных</li>
                   <li>Проектирование REST API бэкендов</li>
+                  <li>Разработка микросервисов</li>
                   <li>Поиск и детектирование CMS</li>
                 </ul>
-              </p>
+              </div>
               <br />
               <Button kind="raised" label="Сделать заказ" accent icon="favorite" />
             </div>
@@ -49,7 +51,6 @@ class Home extends React.Component {
                 полную эмуляцию веб-браузера. В результате получается некий набор данных
                 пригодный для дальнейшего использования.
               </p>
-               <Button kind="flat" label="Более подробно можно прочитать в F.A.Q." icon="favorite" />
             </div>
           </div>
           <div className={grid['col-lg-6']}>

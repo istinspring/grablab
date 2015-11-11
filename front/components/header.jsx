@@ -42,9 +42,12 @@ class Header extends React.Component {
   render() {
     return (
       <AppBar className={style.appbar} flat fixed>
-        <a href="/" style={{float: 'right'}}>GrabLab</a>
-        <Navigation type='horizontal' style={{float: 'left'}}
-                    actions={this.state.actions} />
+        <div className={grid.row}>
+          <div className={grid.box}>
+            <Navigation type='horizontal' style={{float: 'left'}}
+                        actions={this.state.actions} />
+          </div>
+        </div>
       </AppBar>
     );
   }
