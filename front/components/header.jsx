@@ -5,6 +5,7 @@ import grid from 'flexboxgrid';
 import style from './style';
 import AppBar from 'react-toolbox/lib/app_bar';
 import Navigation from 'react-toolbox/lib/navigation';
+import Dropdown from 'react-toolbox/lib/dropdown';
 
 
 class Header extends React.Component {
@@ -40,14 +41,22 @@ class Header extends React.Component {
   }
 
   render() {
+    const languages = [
+      { value: 'RU', label: 'Russian' },
+      { value: 'EN', label: 'English'},
+    ];
+
     return (
       <AppBar className={style.appbar} flat fixed>
-        <div className={grid.row}>
-          <div className={grid.box}>
-            <Navigation type='horizontal' style={{float: 'left'}}
-                        actions={this.state.actions} />
+          <div className={grid['col-lg-6']}>
+            <div className={grid.box}>
+              <Navigation type='horizontal' style={{float: 'left'}}
+                          actions={this.state.actions} />
+            </div>
           </div>
-        </div>
+          <div className={grid['col-lg-6']}>
+            <Dropdown auto dataSource={languages} value='ru' />
+          </div>
       </AppBar>
     );
   }
