@@ -55,7 +55,7 @@ class Home extends React.Component {
           </div>
           <div className={grid['col-lg-6']}>
             <div className={grid.box}>
-              <img src="static/arts/codescreen.png" />
+              <img src="static/arts/codescreen.png" width="90%" />
             </div>
           </div>
         </div>
